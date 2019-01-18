@@ -1,0 +1,4 @@
+Ideas
+
+- Bootstrap
+- Housing/Rental (AirBNB?) matchmaker
