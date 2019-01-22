@@ -36,7 +36,7 @@ class TaskersController < ApplicationController
   end
 
   def destroy
-    @Tasker.destroy
+    @tasker.destroy
     redirect_to new_tasker_path
   end
 
