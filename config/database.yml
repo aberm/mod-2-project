@@ -23,6 +23,7 @@ default: &default
 
 development:
   <<: *default
+  host: localhost
   database: mod-2-project_development
 
   # The specified database role being used to connect to postgres.
