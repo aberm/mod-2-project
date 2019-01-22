@@ -4,8 +4,8 @@ class Task < ApplicationRecord
   validates :location, presence: true
   validates :description, presence: true, length: { minimum: 50, maximum: 1000 }
   validates :vehicle, inclusion: { in: [ true, false ] }
-  validates :rating, presence: true, numericality: true allow_nil: true
-  validates :review, presence: true, numericality: true, allow_nil: true
+  validates :rating, numericality: {greater_than: 0, less_than: 6}, allow_nil: true
+  validates :review, presence: true, allow_nil: true
   validates :minutes, presence: true, numericality: true
   validates :price_rate, presence: true, numericality: true
   validates :completed, presence: true
