@@ -9,6 +9,7 @@ Make sure to include:
 - tasks have categories, taskers don't
 
 Features
+- menu nav header for each page
 - prices (decided by boss) (viewable on boss/tasker profile pages)
 - boss can view his taskers/tasker can view his bosses
 - negotiate price? or send counteroffer?
@@ -21,6 +22,8 @@ Features
 - admin page?
 - Bootstrap for styling
 - add email API?
+- css pseudo classes a:visited styling
+- add star emojis for rating ⭐️
 
 
 - scrapers/apis ?

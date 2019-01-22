@@ -6,3 +6,7 @@ Completed tasks have categories, Taskers get those categories on their profile
 task.tasker_id and task.rating/review does not need to be present -- to be added later
 task/tasker vehicle default to false
 Tasker skills? (join table)
+
+Add boss_rating to task?
+Tasks don't need 'completed' -- if they have a tasker_id
+bosses/edit and taskers/edit edits just their profile; tasks/edit edits the task as a boss

@@ -1,0 +1,37 @@
+<h2><%= @boss.name %>'s Profile</h2>
+
+<ul>
+  <li>Name: <%= @boss.name %></li>
+  <li>Username: <%= @boss.username %></li>
+  <li>Email: <%= @boss.email %></li>
+  <li>City: <%= @boss.city %></li>
+</ul>
+
+<h3>Tasks</h3>
+
+<h4>Currently Listed: </h4>
+<ul>
+  <% @boss.tasks.select do |task| %>
+  <% task.completed == false %>
+  <% end.each do |task| %>
+  <li>Category: <%= task.category %></li>
+  <li>Description: <%= task.description %></li>
+  <li>Location: <%= task.location %></li>
+  <li>Task id: <%= task.id %></li>
+  <% end %>
+</ul>
+
+<h4>Completed: </h4>
+<ul>
+  <% @boss.tasks.select do |task| %>
+  <% task.completed == true %>
+  <% end.each do |task| %>
+  <li>Tasker: <%= link_to task.tasker.name, tasker_path(task.tasker) %></li>
+  <li>Category: <%= task.category %></li>
+  <li>Description: <%= task.description %></li>
+  <li>Location: <%= task.location %></li>
+  <li>Task id: <%= task.id %></li>
+  <% end %>
+</ul>
+
+<p><%= link_to "Edit Profile", edit_boss_path(@boss) %>

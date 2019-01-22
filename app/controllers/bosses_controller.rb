@@ -6,6 +6,8 @@ class BossesController < ApplicationController
   end
 
   def create
+    @boss = Boss.create(boss_params)
+    redirect_to boss_path(@boss)
     # make validations
   end
 
@@ -16,6 +18,8 @@ class BossesController < ApplicationController
   end
 
   def update
+    @boss = Boss.create(boss_params)
+    redirect_to boss_path(@boss)
   end
 
   def destroy
@@ -28,7 +32,7 @@ class BossesController < ApplicationController
   end
 
   def boss_params
-    params.require(:boss).permit(:name)
+    params.require(:boss).permit(:name, :username, :email, :city)
   end
 
 end
