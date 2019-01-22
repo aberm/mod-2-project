@@ -6,8 +6,11 @@ class TaskersController < ApplicationController
   end
 
   def create
+    @tasker = Tasker.create(tasker_params)
+    redirect_to tasker_path(@tasker)
     # make validations
   end
+
 
   def show
   end
@@ -16,6 +19,9 @@ class TaskersController < ApplicationController
   end
 
   def update
+    @tasker = Tasker.create(tasker_params)
+    redirect_to tasker_path(@tasker)
+    # make validations
   end
 
   def destroy
