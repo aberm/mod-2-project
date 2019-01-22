@@ -1,3 +1,5 @@
+<h1> Create a Tasker Profile</h1>
+
 <%= form_for @tasker do |f| %>
   <%= f.label :name, "Full name" %>
   <%= f.text_field :name %><br>
@@ -9,4 +11,6 @@
   <%= f.text_field :city %><br>
   <%= f.label :bio %>
   <%= f.text_area :bio %><br>
+  <%= f.submit %>
+  <% end %>
   <br />
