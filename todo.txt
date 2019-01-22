@@ -1,12 +1,13 @@
 DONE - Remove bio from bosses
-bio column change to :text
+DONE - bio column change to :text
+DONE - task/tasker vehicle default to false
+Add boss_rating to task?
 Add validations
 Tasks have rating and reviews
 Completed tasks have categories, Taskers get those categories on their profile
 task.tasker_id and task.rating/review does not need to be present -- to be added later
-task/tasker vehicle default to false
 Tasker skills? (join table)
 
-Add boss_rating to task?
-Tasks don't need 'completed' -- if they have a tasker_id
+NO - Tasks don't need 'completed' -- if they have a tasker_id
 bosses/edit and taskers/edit edits just their profile; tasks/edit edits the task as a boss
+Task 'belongs_to :tasker' requires Task to be initialized with a tasker
