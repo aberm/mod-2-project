@@ -6,8 +6,12 @@ class TaskersController < ApplicationController
   end
 
   def create
-    @tasker = Tasker.create(tasker_params)
-    redirect_to tasker_path(@tasker)
+    @tasker = Tasker.new(tasker_params)
+    if @tasker.valid?
+      @tasker.save
+      redirect_to tasker_path(@tasker)
+     else
+      render :new
     # make validations
   end
 
@@ -20,7 +24,11 @@ class TaskersController < ApplicationController
 
   def update
     @tasker = Tasker.create(tasker_params)
+    if @tasker.valid?
+       @tasker.save
     redirect_to tasker_path(@tasker)
+    else
+      render :edit
     # make validations
   end
 
