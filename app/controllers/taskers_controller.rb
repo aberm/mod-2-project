@@ -12,29 +12,32 @@ class TaskersController < ApplicationController
       redirect_to tasker_path(@tasker)
      else
       render :new
-    # make validations
+      # make validations
+    end
   end
 
 
   def show
+
   end
 
   def edit
   end
 
   def update
-    @tasker = Tasker.create(tasker_params)
+    @tasker.update(tasker_params)
     if @tasker.valid?
-       @tasker.save
-    redirect_to tasker_path(@tasker)
+      @tasker.save
+      redirect_to tasker_path(@tasker)
     else
       render :edit
     # make validations
+    end
   end
 
   def destroy
     @Tasker.destroy
-    redirect_to new_tasker_url
+    redirect_to new_tasker_path
   end
 
   private
@@ -44,6 +47,6 @@ class TaskersController < ApplicationController
   end
 
   def tasker_params
-    params.require(:tasker).permit(:name)
+    params.require(:tasker).permit(:name, :email, :username, :city, :bio, :vehicle)
   end
 end

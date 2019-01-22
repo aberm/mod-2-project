@@ -11,6 +11,8 @@
   <%= f.text_field :city %><br>
   <%= f.label :bio %>
   <%= f.text_area :bio %><br>
+  <%= f.label :vehicle %>
+  <%= f.select :vehicle, [['No', false], ['Yes', true]] %><br>
   <%= f.submit %>
   <% end %>
   <br />
