@@ -1,4 +1,4 @@
-<%= form_for @tasker do |f| %>
+<%= form_for @boss do |f| %>
   <%= f.label :name, "Full name" %>
   <%= f.text_field :name %><br>
   <%= f.label :email %>
@@ -7,10 +7,6 @@
   <%= f.text_field :username %><br>
   <%= f.label :city %>
   <%= f.text_field :city %><br>
-  <%= f.label :bio %>
-  <%= f.text_area :bio %><br>
-  <%= f.label :vehicle %>
-  <%= f.select :vehicle, [['No', false], ['Yes', true]] %><br>
-  <%= f.submit %>
-  <% end %>
   <br />
+  <%= f.submit "Save" %>
+<% end %>

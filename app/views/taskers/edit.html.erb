@@ -1,1 +1,7 @@
+<h1>Edit Tasker Profile</h1>
+
 <%= render "forms" %>
+
+<%= form_tag tasker_path(@tasker), method: "delete", data: { confirm: "Are you sure you would like to delete this Profile?" } do %>
+  <%= submit_tag "Delete Profile" %>
+<% end %>

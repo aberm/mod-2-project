@@ -38,7 +38,7 @@ class BossesController < ApplicationController
 
   def destroy
     @boss.destroy
-    redirect_to new_boss_url
+    redirect_to new_boss_path
   end
 
   private
