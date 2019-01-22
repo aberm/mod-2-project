@@ -1,9 +1,33 @@
 Ideas
 
-- Bootstrap
-- Housing/Rental (AirBNB?) matchmaker
-- front page blank
+- task rabbit sorta thing
+- Taskers look for tasks
 
+Make sure to include:
+- front page blank
+- City should match task/tasker
+- tasks have categories, taskers don't
+
+Features
+- prices (decided by boss) (viewable on boss/tasker profile pages)
+- boss can view his taskers/tasker can view his bosses
+- negotiate price? or send counteroffer?
+- DMs? / chat feature?
+- voting/poll
+- add feature using our own logic?
+- search bar
+- filter results? (by price etc)
+- calendar for availability?
+- admin page?
+- Bootstrap for styling
+- add email API?
 
 
 - scrapers/apis ?
+- Flight API?
+- Betting/Sports API?
+- Housing/Rental (AirBNB?) matchmaker
+- sports betting/odds
+- game / write our own logic?
+
+- matchmaker paradox
