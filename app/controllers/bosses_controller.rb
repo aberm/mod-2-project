@@ -6,9 +6,17 @@ class BossesController < ApplicationController
   end
 
   def create
-    @boss = Boss.create(boss_params)
-    redirect_to boss_path(@boss)
     # make validations
+    @boss = Boss.new(boss_params)
+    if @boss.valid?
+      @boss.save
+      redirect_to boss_path(@boss)
+    else
+      render :new
+      # redirect_to new_boss_path
+      # Toastr flash messages?
+    end
+
   end
 
   def show
@@ -18,11 +26,19 @@ class BossesController < ApplicationController
   end
 
   def update
-    @boss = Boss.create(boss_params)
-    redirect_to boss_path(@boss)
+    @boss.update(boss_params)
+    if @boss.valid?
+      @boss.save
+      redirect_to boss_path(@boss)
+    else
+      @boss = Boss.find(params[:id])
+      render :edit
+    end
   end
 
   def destroy
+    @boss.destroy
+    redirect_to new_boss_url
   end
 
   private
