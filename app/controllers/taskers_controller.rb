@@ -33,6 +33,8 @@ class TaskersController < ApplicationController
   end
 
   def destroy
+    @Tasker.destroy
+    redirect_to new_tasker_url
   end
 
   private
