@@ -14,6 +14,7 @@ class TaskersController < ApplicationController
       render :new
     # make validations
   end
+end
 
 
   def show
@@ -30,11 +31,12 @@ class TaskersController < ApplicationController
     else
       render :edit
     # make validations
-  end
+    end
+end
 
   def destroy
     @Tasker.destroy
-    redirect_to new_tasker_url
+    redirect_to new_tasker_path
   end
 
   private
