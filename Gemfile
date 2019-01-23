@@ -30,7 +30,7 @@ gem 'faker'
 gem 'rb-readline'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-
+gem "table_print"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
