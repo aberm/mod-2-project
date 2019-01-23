@@ -24,6 +24,7 @@ Features
 - add email API?
 - css pseudo classes a:visited styling
 - add star emojis for rating ⭐️
+- Job Bunny?
 
 
 - scrapers/apis ?
