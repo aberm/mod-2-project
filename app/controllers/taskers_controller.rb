@@ -1,6 +1,11 @@
 class TaskersController < ApplicationController
   before_action :set_tasker, only: [:show, :edit, :update, :destroy]
 
+  def index
+    # delete this
+    @taskers = Tasker.all
+  end
+
   def new
     @tasker = Tasker.new
   end
