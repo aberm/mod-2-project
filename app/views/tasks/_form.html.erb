@@ -8,7 +8,7 @@
   <%= f.label :description %>
   <%= f.text_area :description %><br>
   <%= f.label :category %>
-  <%= f.text_field :category %><br>
+  <%= f.collection_select :category, @categories, :to_s, :to_s %><br>
   <%= f.label :minutes, "Hours" %>
   <%= f.text_field :minutes, value: @task.hours_view %><br>
   <%= f.label :price_rate, "Price rate per hour" %>

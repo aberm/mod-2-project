@@ -33,6 +33,4 @@ class Task < ApplicationRecord
     end
   end
 
-
- TaskList = ["Cleaning", "Decoration", "Delivery", "Errands", "Event-Planning", "Event-Staffing", "Personal Assistant", "Furniture Assembly", "Help Moving", "Heavy Lifting", "Home Repairs", "Mounting", "Organization", "Shopping", "Waiting-in-Line", "Carpentry", "Deep Cleaning", "Electrician", "Plumbing", "Yard Work"]
 end
