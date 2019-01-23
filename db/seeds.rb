@@ -23,3 +23,21 @@ Tasker.create(name: "Greg d", email: "gregreg@gmail.com", username: "greg321", c
 Tasker.create(name: "Rick s", email: "ricksan@gmail.com", username: "therick", city: "Manhattan", bio: "hi there how are you")
 Tasker.create(name: "Walter", email: "walter6@gmail.com", username: "walter6", city: "Boston", bio: "hi there how are you")
 Tasker.create(name: "Nathan", email: "nathan1@gmail.com", username: "nathan111", city: "Boston", bio: "hi there how are you")
+
+3.times do |index|
+  Boss.create!(name: Faker::Name.name,
+                email: Faker::Internet.email,
+                username: Faker::Internet.username(6),
+                city: Faker::Address.state,
+               )
+  end
+
+	3.times do |index|
+	  Tasker.create!(name: Faker::Name.name,
+	                email: Faker::Internet.email,
+	                username: Faker::Internet.username(6),
+	                city: Faker::Address.state,
+	                bio: Faker::Lorem.paragraph(4),
+	                vehicle: Faker::Boolean.boolean(0.8)
+	               )
+	  end
