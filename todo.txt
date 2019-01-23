@@ -9,6 +9,7 @@ DONE - bosses/edit and taskers/edit edits just their profile; tasks/edit edits t
 DONE - form value for hours and price rate
 DONE - change task 'location' to 'city'?
 DONE - add completed tasks page as link at bottom of tasks index page
+DONE - add time to views--tasks show and index etc
 
 add login/authorization functionality
 add nav bar - tasks index, about page, contact, FAQs(?), view profile, logout - static pages
@@ -25,6 +26,5 @@ make task category a drop-down collection_select
 add all seeds to tasks
 
 update seeds
-add time to views--tasks show and index etc
 
 task details partial
