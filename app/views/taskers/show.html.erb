@@ -1,4 +1,5 @@
 <h2>Hi, <%= @tasker.name %></h2>
+<h3>Tasker Profile</h3>
 
 <ul>
   <li>Name: <%= @tasker.name %></li>
@@ -22,8 +23,10 @@
     <li>Boss: <%= link_to task.boss.name, boss_path(task.boss) %></li>
     <li>Category: <%= task.category %></li>
     <li>Description: <%= task.description %></li>
+    <li>Time: <%= task.time_view %></li>
     <li>Location: <%= task.location %></li>
-  	<li>Review <%= task.review %>
+    <li>Hours: <%= task.minutes / 60.0 %></li>
+    <li>Price Rate per hour: $<%= task.price_rate / 100.0 %></li>
     <li>Task id: <%= task.id %></li>
   </ul>
   <% end %>

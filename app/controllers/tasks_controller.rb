@@ -11,6 +11,7 @@ class TasksController < ApplicationController
   end
 
   def create
+    byebug
     @task = Task.new(task_params)
     @task.boss_id = task_params[:boss_id]
     @task.minutes = task_params[:minutes].to_f * 60
@@ -56,6 +57,6 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:boss_id, :location, :description, :category, :vehicle, :minutes, :price_rate)
+    params.require(:task).permit(:boss_id, :location, :description, :category, :vehicle, :minutes, :price_rate, :time)
   end
 end

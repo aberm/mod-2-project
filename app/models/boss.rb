@@ -9,7 +9,12 @@ class Boss < ApplicationRecord
 
 
   def average_rating
-    ratings = self.tasks.map {|task| task.boss_rating }
-    ratings.reduce(:+).to_f / ratings.size
+    ratings = self.tasks.map {|task| task.boss_rating }.compact
+    unless ratings.empty?
+      ratings.reduce(:+).to_f / ratings.size
+    else
+      0
+    end
   end
+
 end

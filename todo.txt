@@ -22,3 +22,11 @@ change task 'location' to 'city'?
 add completed tasks page as link at bottom of tasks index page
 form value for hours and price rate
 make task category a drop-down collection_select
+add 'time'
+add all seeds to tasks
+
+RAKE DB:MIGRATE and
+form_for datetime select
+change tasks validations time - in the future
+update seeds
+add time to views--tasks show and index etc
