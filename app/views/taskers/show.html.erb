@@ -14,17 +14,19 @@
 </ul>
 
 <h4>Completed: </h4>
-<ul>
+
   <% @tasker.tasks.select do |task| %>
   <% task.completed == true %>
   <% end.each do |task| %>
-  <li>Boss: <%= link_to task.boss.name, boss_path(task.boss) %></li>
-  <li>Category: <%= task.category %></li>
-  <li>Description: <%= task.description %></li>
-  <li>Location: <%= task.location %></li>
-	<li>Review <%= task.review %>
-  <li>Task id: <%= task.id %></li>
+  <ul>
+    <li>Boss: <%= link_to task.boss.name, boss_path(task.boss) %></li>
+    <li>Category: <%= task.category %></li>
+    <li>Description: <%= task.description %></li>
+    <li>Location: <%= task.location %></li>
+  	<li>Review <%= task.review %>
+    <li>Task id: <%= task.id %></li>
+  </ul>
   <% end %>
-</ul>
+
 
 <p><%= link_to "Edit Profile", edit_tasker_path(@tasker) %>

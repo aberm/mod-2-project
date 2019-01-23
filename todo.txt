@@ -2,19 +2,19 @@ DONE - Remove bio from bosses
 DONE - bio column change to :text
 DONE - task/tasker vehicle default to false
 DONE - Add boss_rating to task?
-Tasks have rating and reviews
-Completed tasks have categories, Taskers get those categories on their profile
-task.tasker_id and task.rating/review does not need to be present -- to be added later
-Add validations
-Tasker skills? (join table)
-
 DONE - Task 'belongs_to :tasker' requires Task to be initialized with a tasker
+DONE - task.tasker_id and task.rating/review does not need to be present -- to be added later
 NO - Tasks don't need 'completed' -- if they have a tasker_id
-bosses/edit and taskers/edit edits just their profile; tasks/edit edits the task as a boss
+DONE - bosses/edit and taskers/edit edits just their profile; tasks/edit edits the task as a boss
 
 add login/authorization functionality
-add root page
 add nav bar - tasks index, about page, contact, FAQs(?), view profile, logout - static pages
+add root page
+real form to make/edit tasks, and to add ratings and review
+
+Add validations - redo
+Completed tasks have categories, Taskers get those categories on their profile
+Tasker skills? (join table)
 
 remove boss/tasker indexes from routes
 change task 'location' to 'city'?
