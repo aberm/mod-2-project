@@ -7,8 +7,8 @@ class Task < ApplicationRecord
   validates :vehicle, inclusion: { in: [ true, false ] }
   validates :rating, numericality: {greater_than: 0, less_than: 6}, allow_nil: true
   validates :review, presence: true, allow_nil: true
-  validates :minutes, presence: true, numericality: true
+  validates :minutes, numericality: true
   validates :price_rate, presence: true, numericality: true
-  validates :completed, presence: true
+  # validates :completed, presence: true
 
 end
