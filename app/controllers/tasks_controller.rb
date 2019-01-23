@@ -5,6 +5,11 @@ class TasksController < ApplicationController
     @tasks = Task.all
   end
 
+  def index_completed
+    @tasks = Task.all
+    render :'index-completed'
+  end
+
   def new
     @task = Task.new
     # @task.boss = session[:boss] ??
