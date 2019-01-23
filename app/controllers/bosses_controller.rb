@@ -1,6 +1,11 @@
 class BossesController < ApplicationController
   before_action :set_boss, only: [:show, :edit, :update, :destroy]
 
+  def index
+    # delete this
+    @bosses = Boss.all
+  end
+
   def new
     @boss = Boss.new
   end

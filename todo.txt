@@ -15,3 +15,5 @@ bosses/edit and taskers/edit edits just their profile; tasks/edit edits the task
 add login/authorization functionality
 add root page
 add nav bar - tasks index, about page, contact, FAQs(?), view profile, logout - static pages
+
+remove boss/tasker indexes from routes
