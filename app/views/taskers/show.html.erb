@@ -1,11 +1,16 @@
-<h2><%= @tasker.name %>'s Profile</h2>
+<h2>Hi, <%= @tasker.name %></h2>
 
 <ul>
   <li>Name: <%= @tasker.name %></li>
   <li>Username: <%= @tasker.username %></li>
   <li>Email: <%= @tasker.email %></li>
   <li>City: <%= @tasker.city %></li>
-  <li>Vehicle: <%= @tasker.vehicle %></li>
+  <% if @tasker.vehicle %>
+  <li>Vehicle: Yes</li>
+  <% else %>
+  <li>Vehicle: No</li>
+  <% end %>
+  <li>Bio: <%= @tasker.bio %></li>
 </ul>
 
 <h4>Completed: </h4>
