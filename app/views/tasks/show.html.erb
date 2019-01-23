@@ -1,0 +1,11 @@
+<ul>
+  <li>Boss: <%= @task.boss.name %></li>
+  <li>Category: <%= @task.category %></li>
+  <li>Description: <%= @task.description %></li>
+  <li>Location: <%= @task.location %></li>
+  <li>Hours: <%= @task.minutes / 60.0 %></li>
+  <li>Price Rate per hour: $<%= @task.price_rate / 100.0 %></li>
+  <li>Task id: <%= @task.id %></li>
+</ul>
+
+<p><%= link_to "Edit Task", edit_task_path(@task) %>

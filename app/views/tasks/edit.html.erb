@@ -1,0 +1,14 @@
+<h1>Edit Task</h1>
+
+<% if @task.errors.any? %>
+  <h1><%= pluralize(@task.errors.count, 'Error') %>
+  <% @task.errors.full_messages.each do |error| %></h1>
+    <h2><%= error %></h2>
+  <% end %>
+<% end %>
+
+<%= render "form" %>
+
+<%= form_tag tasker_path(@task), method: "delete", data: { confirm: "Are you sure you would like to delete this Profile?" } do %>
+  <%= submit_tag "Delete Task" %>
+<% end %>

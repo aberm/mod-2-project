@@ -1,0 +1,12 @@
+<h4>Currently Listed: </h4>
+<ul>
+  <% @tasks.select do |task| %>
+  <% task.completed == false %>
+  <% end.each do |task| %>
+  <li>Boss: <%= task.boss.name %></li>
+  <li>Category: <%= task.category %></li>
+  <li>Description: <%= task.description %></li>
+  <li>Location: <%= task.location %></li>
+  <li>Task id: <%= task.id %></li>
+  <% end %>
+</ul>

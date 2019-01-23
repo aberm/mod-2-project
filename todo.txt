@@ -17,3 +17,6 @@ add root page
 add nav bar - tasks index, about page, contact, FAQs(?), view profile, logout - static pages
 
 remove boss/tasker indexes from routes
+change task 'location' to 'city'?
+add completed tasks page as link at bottom of tasks index page
+form value for hours and price rate
