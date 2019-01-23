@@ -5,6 +5,11 @@ class TasksController < ApplicationController
     @tasks = Task.all
   end
 
+  def index_completed
+    @tasks = Task.all
+    render :'index-completed'
+  end
+
   def new
     @task = Task.new
     # @task.boss = session[:boss] ??
@@ -56,6 +61,6 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:boss_id, :location, :description, :category, :vehicle, :minutes, :price_rate)
+    params.require(:task).permit(:boss_id, :city, :description, :category, :vehicle, :minutes, :price_rate, :time)
   end
 end

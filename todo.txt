@@ -6,6 +6,10 @@ DONE - Task 'belongs_to :tasker' requires Task to be initialized with a tasker
 DONE - task.tasker_id and task.rating/review does not need to be present -- to be added later
 NO - Tasks don't need 'completed' -- if they have a tasker_id
 DONE - bosses/edit and taskers/edit edits just their profile; tasks/edit edits the task as a boss
+DONE - form value for hours and price rate
+DONE - change task 'location' to 'city'?
+DONE - add completed tasks page as link at bottom of tasks index page
+DONE - add time to views--tasks show and index etc
 
 add login/authorization functionality
 add nav bar - tasks index, about page, contact, FAQs(?), view profile, logout - static pages
@@ -18,7 +22,9 @@ Completed tasks have categories, Taskers get those categories on their profile
 Tasker skills? (join table)
 
 remove boss/tasker indexes from routes
-change task 'location' to 'city'?
-add completed tasks page as link at bottom of tasks index page
-form value for hours and price rate
 make task category a drop-down collection_select
+add all seeds to tasks
+
+update seeds
+
+task details partial

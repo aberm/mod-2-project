@@ -1,40 +1,49 @@
-<h2><%= @boss.name %>'s Profile</h2>
+<h2>Hi, <%= @boss.name %></h2>
+<h3>Boss Profile</h3>
 
 <ul>
   <li>Name: <%= @boss.name %></li>
   <li>Username: <%= @boss.username %></li>
   <li>Email: <%= @boss.email %></li>
   <li>City: <%= @boss.city %></li>
-  <% unless @boss.average_rating.nan? %>
   <li>Rating: <%= @boss.average_rating %></li>
-  <% end %>
 </ul>
 
 <h3>Tasks</h3>
 
 <h4>Currently Listed: </h4>
+
+<% @boss.tasks.select do |task| %>
+<% task.completed == false %>
+<% end.each do |task| %>
 <ul>
-  <% @boss.tasks.select do |task| %>
-  <% task.completed == false %>
-  <% end.each do |task| %>
   <li>Category: <%= task.category %></li>
   <li>Description: <%= task.description %></li>
-  <li>Location: <%= task.location %></li>
+  <li>Time: <%= task.time_view %></li>
+  <li>Location: <%= task.city %></li>
+  <li>Hours: <%= task.minutes / 60.0 %></li>
+  <li>Price Rate per hour: $<%= task.price_rate / 100.0 %></li>
   <li>Task id: <%= task.id %></li>
-  <% end %>
 </ul>
+<% end %>
+
 
 <h4>Completed: </h4>
+
+<% @boss.tasks.select do |task| %>
+<% task.completed == true %>
+<% end.each do |task| %>
 <ul>
-  <% @boss.tasks.select do |task| %>
-  <% task.completed == true %>
-  <% end.each do |task| %>
   <li>Tasker: <%= link_to task.tasker.name, tasker_path(task.tasker) %></li>
   <li>Category: <%= task.category %></li>
   <li>Description: <%= task.description %></li>
-  <li>Location: <%= task.location %></li>
+  <li>Time: <%= task.time_view %></li>
+  <li>Location: <%= task.city %></li>
+  <li>Hours: <%= task.minutes / 60.0 %></li>
+  <li>Price Rate per hour: $<%= task.price_rate / 100.0 %></li>
   <li>Task id: <%= task.id %></li>
-  <% end %>
 </ul>
+<% end %>
+
 
 <p><%= link_to "Edit Profile", edit_boss_path(@boss) %>

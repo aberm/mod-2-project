@@ -1,13 +1,6 @@
 <h4>Currently Listed: </h4>
 
-<% @tasks.select do |task| %>
-<% task.completed == false %>
-<% end.each do |task| %>
-<ul>
-  <li>Boss: <%= task.boss.name %></li>
-  <li>Category: <%= task.category %></li>
-  <li>Description: <%= task.description %></li>
-  <li>Location: <%= task.location %></li>
-  <li>Task id: <%= task.id %></li>
-</ul>
-<% end %>
+<%= render "uncompleted-details" %>
+
+<h5><%= link_to "Completed Tasks", completed_tasks_path %></h5>
+<br>

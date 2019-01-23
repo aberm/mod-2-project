@@ -1,8 +1,9 @@
 <ul>
-  <li>Boss: <%= @task.boss.name %></li>
+  <li>Boss: <%= link_to @task.boss.name, boss_path(@task.boss) %></li>
   <li>Category: <%= @task.category %></li>
   <li>Description: <%= @task.description %></li>
-  <li>Location: <%= @task.location %></li>
+  <li>Time: <%= @task.time_view %></li>
+  <li>Location: <%= @task.city %></li>
   <li>Hours: <%= @task.minutes / 60.0 %></li>
   <li>Price Rate per hour: $<%= @task.price_rate / 100.0 %></li>
   <li>Task id: <%= @task.id %></li>
