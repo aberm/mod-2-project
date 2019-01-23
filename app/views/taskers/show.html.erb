@@ -23,7 +23,7 @@
     <li>Boss: <%= link_to task.boss.name, boss_path(task.boss) %></li>
     <li>Category: <%= task.category %></li>
     <li>Description: <%= task.description %></li>
-    <li>Time: <%= task.time_view %></li>
+    <li>Start Time: <%= task.time_view %></li>
     <li>Location: <%= task.city %></li>
     <li>Hours: <%= task.minutes / 60.0 %></li>
     <li>Price Rate per hour: $<%= task.price_rate / 100.0 %></li>

@@ -1,7 +1,7 @@
 <%= form_for @task do |f| %>
   <%= f.label :boss_id %>
   <%= f.text_field :boss_id %><br>
-  <%= f.label :time %>
+  <%= f.label :time, "Start Time" %>
   <%= f.datetime_select :time, ampm: true %><br>
   <%= f.label :city, "Location" %>
   <%= f.text_field :city %><br>
