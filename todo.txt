@@ -30,3 +30,5 @@ form_for datetime select
 change tasks validations time - in the future
 update seeds
 add time to views--tasks show and index etc
+
+task details partial

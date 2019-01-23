@@ -22,12 +22,13 @@ Task.destroy_all
 	20.times do |index|
 	  Task.create!(location: Faker::Address.state,
 	                description: Faker::Lorem.paragraph(5),
+	                time: Faker::Time.forward(23, :morning),
 	                boss_id: Faker::Number.between(1, 10),
 	                tasker_id: Faker::Number.between(1, 10),
-									minutes: Faker::Number.between(1, 10) * 60,
+									minutes: Faker::Number.between(1, 6) * 60,
 	                vehicle: Faker::Boolean.boolean(0.8),
 	                completed: Faker::Boolean.boolean(0.5),
-									price_rate: Faker::Number.between(30,100)
+									price_rate: Faker::Number.between(15, 50) * 100
 	               )
 	  end
 

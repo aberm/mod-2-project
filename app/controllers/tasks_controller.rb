@@ -11,7 +11,6 @@ class TasksController < ApplicationController
   end
 
   def create
-    byebug
     @task = Task.new(task_params)
     @task.boss_id = task_params[:boss_id]
     @task.minutes = task_params[:minutes].to_f * 60
