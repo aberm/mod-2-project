@@ -1,7 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
-
   def index
     @tasks = Task.all
   end
@@ -15,7 +14,7 @@ class TasksController < ApplicationController
     @task = Task.new
     @categories = [ "Assembly", "Carpentry", "Cleaning", "Decoration", "Delivery",
         "Electrical", "Errands", "Event-Planning", "Gardening", "Heavy Lifting",
-        "Home Improvement", "Installation", "Moving", "Organization", "Painting", 
+        "Home Improvement", "Installation", "Moving", "Organization", "Painting",
         "Personal Assistant", "Plumbing", "Repairs", "Shopping", "Waiting-in-Line"]
     # @task.boss = session[:boss] ??
   end
@@ -39,6 +38,10 @@ class TasksController < ApplicationController
   end
 
   def edit
+    @categories = [ "Assembly", "Carpentry", "Cleaning", "Decoration", "Delivery",
+        "Electrical", "Errands", "Event-Planning", "Gardening", "Heavy Lifting",
+        "Home Improvement", "Installation", "Moving", "Organization", "Painting",
+        "Personal Assistant", "Plumbing", "Repairs", "Shopping", "Waiting-in-Line"] 
   end
 
   def update

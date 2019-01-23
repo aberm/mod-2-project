@@ -2,6 +2,11 @@ Boss.destroy_all
 Tasker.destroy_all
 Task.destroy_all
 
+categories = [ "Assembly", "Carpentry", "Cleaning", "Decoration", "Delivery",
+    "Electrical", "Errands", "Event-Planning", "Gardening", "Heavy Lifting",
+    "Home Improvement", "Installation", "Moving", "Organization", "Painting",
+    "Personal Assistant", "Plumbing", "Repairs", "Shopping", "Waiting-in-Line"]
+
 10.times do |index|
   Boss.create!(name: Faker::Name.name,
                 email: Faker::Internet.email,
@@ -22,6 +27,7 @@ Task.destroy_all
 	20.times do |index|
 	  Task.create!(city: Faker::Address.state,
 	                description: Faker::Lorem.paragraph(5),
+	                category: categories.sample,
 	                time: Faker::Time.forward(23, :morning),
 	                boss_id: Faker::Number.between(1, 10),
 	                tasker_id: Faker::Number.between(1, 10),
