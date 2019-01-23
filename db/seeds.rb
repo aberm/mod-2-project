@@ -20,7 +20,7 @@ Task.destroy_all
 	               )
 	  end
 	20.times do |index|
-	  Task.create!(location: Faker::Address.state,
+	  Task.create!(city: Faker::Address.state,
 	                description: Faker::Lorem.paragraph(5),
 	                time: Faker::Time.forward(23, :morning),
 	                boss_id: Faker::Number.between(1, 10),
