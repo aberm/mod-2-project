@@ -10,9 +10,23 @@
   </head>
 
   <body>
-    <header>
-      <div></div>
+
+    <header class="navbar navbar-fixed-top navbar-inverse">
+    	<div class="container">
+    		<nav>
+    			<ul class="nav navbar-nav navbar-right">
+    				<%= link_to "Tasks", tasks_path %>
+    				<%= link_to "About", pages_about_path %>
+    				<%= link_to "Profile",   '#' %>
+    				<%= link_to "FAQs", pages_faqs_path %>
+    				<%= link_to "Contact",pages_contact_path %>
+    				<%= link_to "Logout", '#' %>
+    			</ul>
+    		</nav>
+    	</div>
     </header>
+    <div class="container">
+
 
     <%= yield %>
   </body>
