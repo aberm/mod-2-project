@@ -12,7 +12,7 @@
   <li><b>Username: </b><%= @boss.username %></li>
   <li><b>Email: </b><%= @boss.email %></li>
   <li><b>City: </b><%= @boss.city %></li>
-  <li><b>Rating: </b><%= @boss.average_rating %></li>
+  <li><b>Rating: </b><%= @boss.average_rating %> <%= '⭐️' * @boss.average_rating.floor%></li>
 </ul><br>
 
 <h3>Tasks</h3><br>
