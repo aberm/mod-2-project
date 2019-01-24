@@ -9,4 +9,6 @@
   <li><b>Task id: </b><%= @task.id %></li>
 </ul>
 
-<p><%= link_to "Edit Task", edit_task_path(@task) %>
+<% if logged_in? && the_user == @task.boss %>
+  <p><%= link_to "Edit Task", edit_task_path(@task) %></p>
+<% end %>

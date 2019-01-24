@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :logged_in?
   helper_method :users_path
+  helper_method :the_user
 
   def logged_in?
     !!user

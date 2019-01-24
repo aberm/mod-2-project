@@ -11,7 +11,8 @@ categories = [ "Assembly", "Carpentry", "Cleaning", "Decoration", "Delivery",
   Boss.create!(name: Faker::Name.name,
                 email: Faker::Internet.email,
                 username: Faker::Internet.username(6),
-                city: Faker::Address.state
+                city: Faker::Address.state,
+                password:'1234',
                )
   end
 #
@@ -21,7 +22,8 @@ categories = [ "Assembly", "Carpentry", "Cleaning", "Decoration", "Delivery",
 	                username: Faker::Internet.username(6),
 	                city: Faker::Address.state,
 	                bio: Faker::Lorem.paragraph(4),
-	                vehicle: Faker::Boolean.boolean(0.8)
+	                vehicle: Faker::Boolean.boolean(0.8),
+                  password:'1234',
 	               )
 	  end
 	20.times do |index|
