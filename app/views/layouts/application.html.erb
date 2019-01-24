@@ -42,15 +42,15 @@
           <p class="nav-link">Hi, <%= the_user.name.split.first.capitalize %></p>
         </li>
         <% end %>
-        <% unless logged_in? %>
-        <li class="nav-item">
-          <a class="nav-link" href="<%=login_path%>">Log in</a>
-        </li> <% end %>
         <% if logged_in? %>
-        <li class="nav-link">
-          <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+          <li class="nav-link" id="logout">
+            <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
             <input type=submit value='Logout'>
-          <% end %>
+            <% end %>
+          </li>
+        <% else %>
+          <li class="nav-item" id="login">
+            <a class="nav-link" href="<%=login_path%>">Log in</a>
           </li>
         <% end %>
 
