@@ -19,6 +19,7 @@ add login/authorization functionality
 add nav bar - root/home page, tasks index, about page, contact, FAQs(?), view profile, logout - static pages
 remove search bar (for now), float-right profile and logout (and login)
 styling
+Add pictures and icon/logo?
 
 FORM-
 real form to add ratings and review
