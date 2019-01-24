@@ -7,7 +7,11 @@ class TaskersController < ApplicationController
   end
 
   def new
-    @tasker = Tasker.new
+    if logged_in?
+      redirect_to users_path
+    else
+      @tasker = Tasker.new
+    end
   end
 
   def create

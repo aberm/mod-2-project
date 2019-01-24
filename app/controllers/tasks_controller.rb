@@ -18,12 +18,12 @@ class TasksController < ApplicationController
         "Electrical", "Errands", "Event-Planning", "Gardening", "Heavy Lifting",
         "Home Improvement", "Installation", "Moving", "Organization", "Painting",
         "Personal Assistant", "Plumbing", "Repairs", "Shopping", "Waiting-in-Line"]
-    # @task.boss = session[:boss] ??
+
   end
 
   def create
     @task = Task.new(task_params)
-    @task.boss_id = task_params[:boss_id]
+    @task.boss_id = the_user.id
     @task.minutes = task_params[:minutes].to_f * 60
     @task.price_rate = task_params[:price_rate].to_f * 100
 
@@ -48,7 +48,6 @@ class TasksController < ApplicationController
 
   def update
     @task.update(task_params)
-    @task.boss_id = task_params[:boss_id]
     @task.minutes = task_params[:minutes].to_f * 60
     @task.price_rate = task_params[:price_rate].to_f * 100
 
@@ -71,6 +70,6 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:boss_id, :city, :description, :category, :vehicle, :minutes, :price_rate, :time)
+    params.require(:task).permit(:city, :description, :category, :vehicle, :minutes, :price_rate, :time)
   end
 end

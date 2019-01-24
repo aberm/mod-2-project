@@ -7,7 +7,11 @@ class BossesController < ApplicationController
   end
 
   def new
-    @boss = Boss.new
+    if logged_in?
+      redirect_to users_path
+    else
+      @boss = Boss.new
+    end
   end
 
   def create
