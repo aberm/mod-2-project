@@ -11,44 +11,36 @@ DONE - change task 'location' to 'city'?
 DONE - add completed tasks page as link at bottom of tasks index page
 DONE - add time to views--tasks show and index etc
 DONE - make task category a drop-down collection_select
+DONE - create Sessions controller
+DONE - add '/signup' route to pages
+
 
 add login/authorization functionality
-add nav bar - tasks index, about page, contact, FAQs(?), view profile, logout - static pages
+add nav bar - root/home page, tasks index, about page, contact, FAQs(?), view profile, logout - static pages
+remove search bar (for now), float-right profile and logout (and login)
 styling
 
-add root page
-real form to make/edit tasks, and to add ratings and review
+FORM-
+real form to add ratings and review
 tasker on index page can choose a task - button_to which is a link_to
-
-Add validations - redo
-Completed tasks have categories, Taskers get those categories on their profile
-Tasker skills? (join table)
-
-remove boss/tasker indexes from routes
-add all seeds to tasks
-
-update seeds
-
-task details partial
-change price to have two decimals
-
-create Sessions controller
-add password_digest to bosses and taskers
-gem 'bcrypt'
-flash messages for incorrect password / incorrect confirmation
-
-session[:user_id] and session[:user_type](?)
 boss button_to "Completed?"
 then tasker button_to "Rate and review"
 
-add logged_in etc to ApplicationController
-self.class.name.downcase helper method
+AUTH-
+updating password, leaving it blank?
+Add validations - redo
+if boss and tasker have the same username?
+remove boss/tasker indexes from routes
+flash messages for incorrect password / incorrect confirmation
+
+SEEDS-
+divide tasks seeds into completed and not
+update seeds
+
+SMALL FEATURES-
+Completed tasks have categories, Taskers get those categories on their profile
+task details partials
+change price to have two decimals
+upload profile pictures - Active Storage
 
 update readme
-
-updating password, leaving it blank?
-if boss and tasker have the same username?
-
-add '/signup' route to pages
-
-remove search bar (for now), float-left profile and logout
