@@ -47,6 +47,10 @@ class TasksController < ApplicationController
   end
 
   def update
+    if the_user.class.name == "Tasker"
+      @task.tasker_id = the_user.id
+      redirect_to task_path(@task)
+    end
     @task.update(task_params)
     @task.minutes = task_params[:minutes].to_f * 60
     @task.price_rate = task_params[:price_rate].to_f * 100

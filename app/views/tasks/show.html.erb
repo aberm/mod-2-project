@@ -6,9 +6,22 @@
   <li><b>Location: </b><%= @task.city %></li>
   <li><b>Hours: </b><%= @task.minutes / 60.0 %></li>
   <li><b>Price Rate per hour: </b>$<%= @task.price_rate / 100.0 %></li>
+  <%= if @task.vehicle %>
+  <li><b>Vehicle needed: </b>Yes</li>
+  <% else %>
+  <li><b>Vehicle needed: </b>No</li>
+  <% end %>
   <li><b>Task id: </b><%= @task.id %></li>
+
 </ul>
 
 <% if logged_in? && the_user == @task.boss %>
   <p><%= link_to "Edit Task", edit_task_path(@task) %></p>
+<% end %>
+
+<% if logged_in? && the_user.class.name == 'Tasker' %>
+  <%= form_for @task do |f| %>
+
+  <%= f.submit "Choose Task" %>
+  <% end %>
 <% end %>
