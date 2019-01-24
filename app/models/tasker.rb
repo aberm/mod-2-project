@@ -6,4 +6,7 @@ class Tasker < ApplicationRecord
   validates :username, presence: true, uniqueness: true, length: { minimum: 5 }
   validates :bio, presence: true, length: { minimum: 10, maximum: 250 }
   validates :vehicle, inclusion: { in: [ true, false ] }
+
+  has_secure_password
+  
 end

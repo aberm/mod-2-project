@@ -1,8 +1,8 @@
 <h1>Edit your Profile</h1>
 
-<% if @task.errors.any? %>
-  <h1><%= pluralize(@task.errors.count, 'Error') %>
-  <% @task.errors.full_messages.each do |error| %></h1>
+<% if @boss.errors.any? %>
+  <h1><%= pluralize(@boss.errors.count, 'Error') %>
+  <% @boss.errors.full_messages.each do |error| %></h1>
    <h2><%= error %></h2>
   <% end %>
 <% end %>

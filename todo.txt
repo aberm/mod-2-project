@@ -14,9 +14,11 @@ DONE - make task category a drop-down collection_select
 
 add login/authorization functionality
 add nav bar - tasks index, about page, contact, FAQs(?), view profile, logout - static pages
+styling
+
 add root page
 real form to make/edit tasks, and to add ratings and review
-tasker on index page can choose a task
+tasker on index page can choose a task - button_to which is a link_to
 
 Add validations - redo
 Completed tasks have categories, Taskers get those categories on their profile
@@ -29,3 +31,19 @@ update seeds
 
 task details partial
 change price to have two decimals
+
+create Sessions controller
+add password_digest to bosses and taskers
+gem 'bcrypt'
+flash messages for incorrect password / incorrect confirmation
+
+session[:user_id] and session[:user_type](?)
+boss button_to "Completed?"
+then tasker button_to "Rate and review"
+
+add logged_in etc to ApplicationController
+self.class.name.downcase helper method
+
+update readme
+
+updating password, leaving it blank?
