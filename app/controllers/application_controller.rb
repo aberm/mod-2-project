@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :logged_in?
   helper_method :users_path
+  helper_method :the_user
 
   def logged_in?
     !!user
@@ -11,8 +12,12 @@ class ApplicationController < ActionController::Base
     session[:user] ||= nil
   end
 
+  def the_user
+    Boss.find_by(username: session[:user]['username']) || Tasker.find_by(username: session[:user]['username'])
+  end
+
   def users_path
-    @user = Boss.find_by(username: session[:user]['username']) || Tasker.find_by(username: session[:user]['username'])
+    @user = the_user
     if @user.class == Boss
       return boss_path(@user)
     elsif @user.class == Tasker

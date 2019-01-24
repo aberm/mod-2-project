@@ -1,5 +1,7 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :require_login
+  skip_before_action :require_login, only: [:index, :index_completed, :show]
 
   def index
     @tasks = Task.all
@@ -41,7 +43,7 @@ class TasksController < ApplicationController
     @categories = [ "Assembly", "Carpentry", "Cleaning", "Decoration", "Delivery",
         "Electrical", "Errands", "Event-Planning", "Gardening", "Heavy Lifting",
         "Home Improvement", "Installation", "Moving", "Organization", "Painting",
-        "Personal Assistant", "Plumbing", "Repairs", "Shopping", "Waiting-in-Line"] 
+        "Personal Assistant", "Plumbing", "Repairs", "Shopping", "Waiting-in-Line"]
   end
 
   def update

@@ -7,8 +7,11 @@
   <% end %>
 <% end %>
 
-<%= render "form" %>
-
-<%= form_tag tasker_path(@task), method: "delete", data: { confirm: "Are you sure you would like to delete this Profile?" } do %>
-  <%= submit_tag "Delete Task" %>
+<% if logged_in? && the_user == @task.boss %>
+  <%= render "form" %>
+  <%= form_tag tasker_path(@task), method: "delete", data: { confirm: "Are you sure you would like to delete this Profile?" } do %>
+    <%= submit_tag "Delete Task" %>
+  <% end %>
+<% else %>
+    <p>You do not have access to this page.</p>
 <% end %>

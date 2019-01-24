@@ -3,10 +3,10 @@
 <% @bosses.each do |boss| %>
 <ul>
   <li><b>id: <%= boss.id %></b></li>
-  <li>Name: <%= boss.name %></li>
-  <li>Username: <%= boss.username %></li>
-  <li>Email: <%= boss.email %></li>
-  <li>City: <%= boss.city %></li>
-  <li>Rating: <%= boss.average_rating %></li>
+  <li><b>Name: </b><%= boss.name %></li>
+  <li><b>Username: </b><%= boss.username %></li>
+  <li><b>Email: </b><%= boss.email %></li>
+  <li><b>City: </b><%= boss.city %></li>
+  <li><b>Rating: </b><%= boss.average_rating %></li>
 </ul>
 <% end %>

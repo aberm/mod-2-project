@@ -1,34 +1,40 @@
-<h2>Hi, <%= @tasker.name %></h2>
 <h3>Tasker Profile</h3>
+<% if logged_in? && the_user == @tasker %>
+  <h2>Hi, <%= @tasker.name %></h2>
+<% else %>
+  <h2><%= @tasker.name %>'s Profile</h2>
+<% end %>
 
+<br>
 <ul>
-  <li>Name: <%= @tasker.name %></li>
-  <li>Username: <%= @tasker.username %></li>
-  <li>Email: <%= @tasker.email %></li>
-  <li>City: <%= @tasker.city %></li>
+  <li><b>Name: </b><%= @tasker.name %></li>
+  <li><b>Username: </b><%= @tasker.username %></li>
+  <li><b>Email: </b><%= @tasker.email %></li>
+  <li><b>City: </b><%= @tasker.city %></li>
   <% if @tasker.vehicle %>
-  <li>Vehicle: Yes</li>
+  <li><b>Vehicle: </b>Yes</li>
   <% else %>
-  <li>Vehicle: No</li>
+  <li><b>Vehicle: </b>No</li>
   <% end %>
-  <li>Bio: <%= @tasker.bio %></li>
-</ul>
+  <li><b>Bio: </b><%= @tasker.bio %></li>
+</ul><br>
 
-<h4>Completed: </h4>
+<h4>Completed: </h4><br>
 
   <% @tasker.tasks.select do |task| %>
   <% task.completed == true %>
   <% end.each do |task| %>
   <ul>
-    <li>Boss: <%= link_to task.boss.name, boss_path(task.boss) %></li>
-    <li>Category: <%= task.category %></li>
-    <li>Description: <%= task.description %></li>
-    <li>Start Time: <%= task.time_view %></li>
-    <li>Location: <%= task.city %></li>
-    <li>Hours: <%= task.minutes / 60.0 %></li>
-    <li>Price Rate per hour: $<%= task.price_rate / 100.0 %></li>
-    <li>Task id: <%= task.id %></li>
-  </ul>
+    <li><b>Boss: </b><%= link_to task.boss.name, boss_path(task.boss) %></li>
+    <li><b>Category: </b><%= task.category %></li>
+    <li><b>Description: </b><%= task.description %></li>
+    <li><b>Start Time: </b><%= task.time_view %></li>
+    <li><b>Location: </b><%= task.city %></li>
+    <li><b>Hours: </b><%= task.minutes / 60.0 %></li>
+    <li><b>Price Rate per hour: </b>$<%= task.price_rate / 100.0 %></li>
+    <li><b>Task id: </b><%= task.id %></li>
+    <%= link_to "View task", task_path(task) %>
+  </ul><br>
   <% end %>
 
 
