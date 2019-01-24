@@ -6,7 +6,7 @@
   <li><b>Location: </b><%= @task.city %></li>
   <li><b>Hours: </b><%= @task.minutes / 60.0 %></li>
   <li><b>Price Rate per hour: </b>$<%= @task.price_rate / 100.0 %></li>
-  <%= if @task.vehicle %>
+  <% if @task.vehicle %>
   <li><b>Vehicle needed: </b>Yes</li>
   <% else %>
   <li><b>Vehicle needed: </b>No</li>

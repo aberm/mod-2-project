@@ -24,6 +24,7 @@ Add pictures and icon/logo?
 FORM-
 real form to add ratings and review
 tasker on index page can choose a task - button_to which is a link_to
+has vehicle or not
 boss button_to "Completed?"
 then tasker button_to "Rate and review"
 
