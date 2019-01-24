@@ -16,7 +16,7 @@ add login/authorization functionality
 add nav bar - tasks index, about page, contact, FAQs(?), view profile, logout - static pages
 add root page
 real form to make/edit tasks, and to add ratings and review
-tasker on index page can choose a task
+tasker on index page can choose a task - button_to which is a link_to
 
 Add validations - redo
 Completed tasks have categories, Taskers get those categories on their profile

@@ -5,6 +5,7 @@
 <% end.each do |task| %>
 <ul>
   <li>Boss: <%= link_to task.boss.name, boss_path(task.boss) %></li>
+  <li>Tasker: <%= link_to task.tasker.name, tasker_path(task.tasker) %></li>
   <li>Category: <%= task.category %></li>
   <li>Description: <%= task.description %></li>
   <li>Start Time: <%= task.time_view %></li>
