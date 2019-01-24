@@ -17,7 +17,7 @@ class TaskersController < ApplicationController
       @tasker = Tasker.new(tasker_params)
       if @tasker.valid?
         @tasker.save
-        # session[:user] = {user_id: @boss.id, user_type: @boss.class.name.downcase}
+        session[:user] = @tasker
         redirect_to tasker_path(@tasker)
        else
         render :new
@@ -53,7 +53,7 @@ end
 
   def destroy
     @tasker.destroy
-    # session.delete(:user)
+    session.delete(:user)
     redirect_to new_tasker_path
   end
 

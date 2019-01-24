@@ -27,18 +27,27 @@
         <li class="nav-item">
           <a class="nav-link" href="<%=pages_about_path%>">About</a>
         </li>
+        <% if logged_in? %>
         <li class="nav-item">
-          <a class="nav-link" href="#">Profile</a>
-        </li>
+          <a class="nav-link" href="<%=users_path%>">Profile</a>
+        </li> <% end %>
         <li class="nav-item">
           <a class="nav-link" href="<%=pages_faqs_path%>">FAQs</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<%= pages_contact_path %>">Contact</a>
         </li>
+        <% unless logged_in? %>
         <li class="nav-item">
-          <a class="nav-link" href="#">Logout</a>
-        </li>
+          <a class="nav-link" href="<%=login_path%>">Log in</a>
+        </li> <% end %>
+        <% if logged_in? %>
+        <li class="nav-link">
+          <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+            <input type=submit value='Logout'>
+          <% end %>
+          </li>
+        <% end %>
 
       </ul>
       <form class="form-inline my-2 my-lg-0">
