@@ -18,7 +18,7 @@ class BossesController < ApplicationController
       @boss = Boss.new(boss_params) # change to 'new'?
       if @boss.valid?
         @boss.save
-        # session[:user] = {user_id: @boss.id, user_type: @boss.class.name.downcase}
+        session[:user] = @boss
         redirect_to boss_path(@boss)
       else
         render :new
@@ -52,7 +52,7 @@ class BossesController < ApplicationController
 
   def destroy
     @boss.destroy
-    # session.delete(:user)
+    session.delete(:user)
     redirect_to new_boss_path
   end
 

@@ -1,0 +1,18 @@
+<% if logged_in? %>
+  <p>Hi, <%= @user.name %></p>
+  <p>You are already logged in.</p>
+  <p>You are a <%= @user.class %>.</p>
+  <br>
+  <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+    <input type=submit value='logout'>
+  <% end %>
+<% end %>
+<% unless logged_in? %>
+  <%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
+    <%= label_tag :username %>
+    <%= text_field_tag :username %>
+    <%= label_tag :password %>
+    <%= password_field_tag 'password' %>
+    <%= submit_tag 'Submit' %>
+  <% end %>
+<% end %>

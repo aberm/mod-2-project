@@ -47,3 +47,6 @@ self.class.name.downcase helper method
 update readme
 
 updating password, leaving it blank?
+if boss and tasker have the same username?
+
+add '/signup' route to pages
