@@ -16,7 +16,7 @@
   <% else %>
   <li><b>Vehicle needed: </b>No</li>
   <% end %>
-  <% if @task.completed %>
+  <% if @task.rating && @task.review %>
   <li><b>Review: </b><%= @task.review %></li>
   <li><b>Rating: </b><%= @task.rating %> <%= '⭐️' * @task.rating%></li>
   <% end %>
@@ -27,9 +27,9 @@
   <p><%= link_to "Edit Task", edit_task_path(@task) %></p>
 <% end %>
 
-<% if logged_in? && the_user.class.name == 'Tasker' %>
+<% if logged_in? && the_user.class.name == 'Tasker' && @task.tasker_id == nil %>
   <%= form_for @task do |f| %>
-
+  <%= f.hidden_field :tasker_id, value: the_user.id %>
   <%= f.submit "Choose Task" %>
   <% end %>
 <% end %>
