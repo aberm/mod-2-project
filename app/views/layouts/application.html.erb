@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Mod2Project</title>
+    <title>Job Bunny</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -27,10 +27,6 @@
         <li class="nav-item">
           <a class="nav-link" href="<%=pages_about_path%>">About</a>
         </li>
-        <% if logged_in? %>
-        <li class="nav-item">
-          <a class="nav-link" href="<%=users_path%>">Profile</a>
-        </li> <% end %>
         <li class="nav-item">
           <a class="nav-link" href="<%=pages_faqs_path%>">FAQs</a>
         </li>
@@ -39,7 +35,7 @@
         </li>
         <% if logged_in? %>
         <li class="nav-item">
-          <p class="nav-link">Hi, <%= the_user.name.split.first.capitalize %></p>
+          <a class="nav-link" href="<%=users_path%>">Hi, <%= the_user.name.split.first.capitalize %></a>
         </li>
         <% end %>
         <% if logged_in? %>
