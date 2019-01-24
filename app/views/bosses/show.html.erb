@@ -1,47 +1,55 @@
-<h2>Hi, <%= @boss.name %></h2>
+
 <h3>Boss Profile</h3>
+<% if logged_in? && the_user == @boss %>
+  <h2>Hi, <%= @boss.name %></h2>
+<% else %>
+  <h2><%= @boss.name %>'s Profile</h2>
+<% end %>
 
+<br>
 <ul>
-  <li>Name: <%= @boss.name %></li>
-  <li>Username: <%= @boss.username %></li>
-  <li>Email: <%= @boss.email %></li>
-  <li>City: <%= @boss.city %></li>
-  <li>Rating: <%= @boss.average_rating %></li>
-</ul>
+  <li><b>Name: </b><%= @boss.name %></li>
+  <li><b>Username: </b><%= @boss.username %></li>
+  <li><b>Email: </b><%= @boss.email %></li>
+  <li><b>City: </b><%= @boss.city %></li>
+  <li><b>Rating: </b><%= @boss.average_rating %></li>
+</ul><br>
 
-<h3>Tasks</h3>
+<h3>Tasks</h3><br>
 
 <h4>Currently Listed: </h4>
 
+<br>
 <% @boss.tasks.select do |task| %>
 <% task.completed == false %>
 <% end.each do |task| %>
 <ul>
-  <li>Category: <%= task.category %></li>
-  <li>Description: <%= task.description %></li>
-  <li>Time: <%= task.time_view %></li>
-  <li>Location: <%= task.city %></li>
-  <li>Hours: <%= task.minutes / 60.0 %></li>
-  <li>Price Rate per hour: $<%= task.price_rate / 100.0 %></li>
-  <li>Task id: <%= task.id %></li>
-</ul>
+  <li><b>Category: </b><%= task.category %></li>
+  <li><b>Description: </b><%= task.description %></li>
+  <li><b>Time: </b><%= task.time_view %></li>
+  <li><b>Location: </b><%= task.city %></li>
+  <li><b>Hours: </b><%= task.minutes / 60.0 %></li>
+  <li><b>Price Rate per hour: </b>$<%= task.price_rate / 100.0 %></li>
+  <li><b>Task id: </b><%= task.id %></li>
+</ul><br>
 <% end %>
 
 
 <h4>Completed: </h4>
 
+<br>
 <% @boss.tasks.select do |task| %>
 <% task.completed == true %>
 <% end.each do |task| %>
 <ul>
-  <li>Tasker: <%= link_to task.tasker.name, tasker_path(task.tasker) %></li>
-  <li>Category: <%= task.category %></li>
-  <li>Description: <%= task.description %></li>
-  <li>Time: <%= task.time_view %></li>
-  <li>Location: <%= task.city %></li>
-  <li>Hours: <%= task.minutes / 60.0 %></li>
-  <li>Price Rate per hour: $<%= task.price_rate / 100.0 %></li>
-  <li>Task id: <%= task.id %></li>
+  <li><b>Tasker: </b><%= link_to task.tasker.name, tasker_path(task.tasker) %></li>
+  <li><b>Category: </b><%= task.category %></li>
+  <li><b>Description: </b><%= task.description %></li>
+  <li><b>Time: </b><%= task.time_view %></li>
+  <li><b>Location: </b><%= task.city %></li>
+  <li><b>Hours: </b><%= task.minutes / 60.0 %></li>
+  <li><b>Price Rate per hour: </b>$<%= task.price_rate / 100.0 %></li>
+  <li><b>Task id: </b><%= task.id %></li>
 </ul>
 <% end %>
 

@@ -2,18 +2,18 @@
 <% task.completed == false %>
 <% end.each do |task| %>
 <ul>
-  <li>Boss: <%= link_to task.boss.name, boss_path(task.boss) %></li>
-  <li>Category: <%= task.category %></li>
-  <li>Description: <%= task.description %></li>
-  <li>Start Time: <%= task.time_view %></li>
-  <li>Location: <%= task.city %></li>
+  <li><b>Boss: </b><%= link_to task.boss.name, boss_path(task.boss) %></li>
+  <li><b>Category: </b><%= task.category %></li>
+  <li><b>Description: </b><%= task.description %></li>
+  <li><b>Start Time: </b><%= task.time_view %></li>
+  <li><b>Location: </b><%= task.city %></li>
   <% if task.vehicle %>
-  <li>Vehicle needed: Yes</li>
+  <li><b>Vehicle needed: </b>Yes</li>
   <% else %>
-  <li>Vehicle needed: No</li>
+  <li><b>Vehicle needed: </b>No</li>
   <% end %>
-  <li>Hours: <%= task.minutes / 60.0 %></li>
-  <li>Price Rate per hour: $<%= task.price_rate / 100.0 %></li>
-  <li>Task id: <%= task.id %></li>
-</ul>
+  <li><b>Hours: </b><%= task.minutes / 60.0 %></li>
+  <li><b>Price Rate per hour: </b>$<%= task.price_rate / 100.0 %></li>
+  <li><b>Task id: </b><%= task.id %></li>
+</ul><br>
 <% end %>

@@ -1,17 +1,17 @@
-<h3>All Taskers</h3>
+<h3>All Taskers</h3><br>
 
 <% @taskers.each do |tasker| %>
 <ul>
   <li><b>id: <%= tasker.id %></b></li>
-  <li>Name: <%= tasker.name %></li>
-  <li>Username: <%= tasker.username %></li>
-  <li>Email: <%= tasker.email %></li>
-  <li>City: <%= tasker.city %></li>
+  <li><b>Name: </b><%= tasker.name %></li>
+  <li><b>Username: </b><%= tasker.username %></li>
+  <li><b>Email: </b><%= tasker.email %></li>
+  <li><b>City: </b><%= tasker.city %></li>
   <% if tasker.vehicle %>
-  <li>Vehicle: Yes</li>
+  <li><b>Vehicle: </b>Yes</li>
   <% else %>
-  <li>Vehicle: No</li>
+  <li><b>Vehicle: </b>No</li>
   <% end %>
-  <li>Bio: <%= tasker.bio %></li>
-</ul>
+  <li><b>Bio: </b><%= tasker.bio %></li>
+</ul><br>
 <% end %>
