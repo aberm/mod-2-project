@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   get 'pages/about'
   get 'pages/contact'
   get 'pages/faqs'
+  get 'signup' => 'pages#signup', as: 'signup'
+  
   resources :tasks
   resources :taskers
   resources :bosses
