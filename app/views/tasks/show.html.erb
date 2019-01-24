@@ -1,6 +1,10 @@
 <br>
 <ul>
+  <li><b>Task id: </b><%= @task.id %></li>
   <li><b>Boss: </b><%= link_to @task.boss.name, boss_path(@task.boss) %></li>
+  <% if @task.tasker_id %>
+  <li><b>Tasker: </b><%= link_to @task.tasker.name, tasker_path(@task.tasker) %></li>
+  <% end %>
   <li><b>Category: </b><%= @task.category %></li>
   <li><b>Description: </b><%= @task.description %></li>
   <li><b>Start Time: </b><%= @task.time_view %></li>
@@ -12,7 +16,10 @@
   <% else %>
   <li><b>Vehicle needed: </b>No</li>
   <% end %>
-  <li><b>Task id: </b><%= @task.id %></li>
+  <% if @task.completed %>
+  <li><b>Review: </b><%= @task.review %></li>
+  <li><b>Rating: </b><%= @task.rating %> <%= '⭐️' * @task.rating%></li>
+  <% end %>
 
 </ul>
 
