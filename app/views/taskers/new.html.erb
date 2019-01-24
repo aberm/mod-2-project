@@ -1,8 +1,8 @@
 <h1> Create a Tasker Profile</h1>
 
-<% if @task.errors.any? %>
-  <h1><%= pluralize(@task.errors.count, 'Error') %>
-  <% @task.errors.full_messages.each do |error| %></h1>
+<% if @tasker.errors.any? %>
+  <h1><%= pluralize(@tasker.errors.count, 'Error') %>
+  <% @tasker.errors.full_messages.each do |error| %></h1>
    <h2><%= error %></h2>
   <% end %>
 <% end %>

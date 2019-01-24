@@ -11,13 +11,19 @@ class TaskersController < ApplicationController
   end
 
   def create
-    @tasker = Tasker.new(tasker_params)
-    if @tasker.valid?
-      @tasker.save
-      redirect_to tasker_path(@tasker)
-     else
-      render :new
-      # make validations
+    if tasker_params[:password] != tasker_params[:password_confirmation]
+      redirect_to new_tasker_path
+    else
+      @tasker = Tasker.new(tasker_params)
+      if @tasker.valid?
+        @tasker.save
+        # session[:user] = {user_id: @boss.id, user_type: @boss.class.name.downcase}
+        redirect_to tasker_path(@tasker)
+       else
+        render :new
+        # redirect_to new_tasker_path
+        # make validations
+      end
     end
   end
 
@@ -30,6 +36,10 @@ class TaskersController < ApplicationController
   end
 
   def update
+    if tasker_params[:password] != tasker_params[:password_confirmation]
+      set_tasker
+      render :edit
+    else
     @tasker.update(tasker_params)
     if @tasker.valid?
       @tasker.save
@@ -39,9 +49,11 @@ class TaskersController < ApplicationController
     # make validations
     end
   end
+end
 
   def destroy
     @tasker.destroy
+    # session.delete(:user)
     redirect_to new_tasker_path
   end
 
@@ -52,6 +64,6 @@ class TaskersController < ApplicationController
   end
 
   def tasker_params
-    params.require(:tasker).permit(:name, :email, :username, :city, :bio, :vehicle)
+    params.require(:tasker).permit(:name, :email, :username, :city, :bio, :vehicle, :password, :password_confirmation)
   end
 end
