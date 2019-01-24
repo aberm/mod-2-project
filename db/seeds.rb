@@ -26,7 +26,7 @@ categories = [ "Assembly", "Carpentry", "Cleaning", "Decoration", "Delivery",
                   password:'1234',
 	               )
 	  end
-	20.times do |index|
+	10.times do |index|
 	  Task.create!(city: Faker::Address.state,
 	                description: Faker::Lorem.paragraph(5),
 	                category: categories.sample,
@@ -35,10 +35,25 @@ categories = [ "Assembly", "Carpentry", "Cleaning", "Decoration", "Delivery",
 	                tasker_id: Faker::Number.between(1, 10),
 									minutes: Faker::Number.between(1, 6) * 60,
 	                vehicle: Faker::Boolean.boolean(0.8),
-	                completed: Faker::Boolean.boolean(0.5),
-									price_rate: Faker::Number.between(15, 50) * 100
+	                completed: true,
+									price_rate: Faker::Number.between(15, 50) * 100,
+									rating: Faker::Number.between(1, 5),
+									review: Faker::Lorem.paragraph(1),
+									boss_rating: Faker::Number.between(1, 5)
 	               )
 	  end
+    10.times do |index|
+  	  Task.create!(city: Faker::Address.state,
+  	                description: Faker::Lorem.paragraph(5),
+  	                category: categories.sample,
+  	                time: Faker::Time.forward(23, :morning),
+  	                boss_id: Faker::Number.between(1, 10),
+  									minutes: Faker::Number.between(1, 6) * 60,
+  	                vehicle: Faker::Boolean.boolean(0.5),
+  	                completed: false,
+  									price_rate: Faker::Number.between(15, 50) * 100
+  	               )
+  	  end
 
 # Boss.create(name: "john f", email: "john5@gmail.com", username: "john5", city: "Brooklyn")
 # Boss.create(name: "dave s", email: "dave55@gmail.com", username: "dave55", city: "Brooklyn")

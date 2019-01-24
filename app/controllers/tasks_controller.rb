@@ -49,7 +49,9 @@ class TasksController < ApplicationController
   def update
     if the_user.class.name == "Tasker"
       @task.tasker_id = the_user.id
-      redirect_to task_path(@task)
+      @task.completed = true
+      @task.save
+      redirect_to task_path(@task) and return
     end
     @task.update(task_params)
     @task.minutes = task_params[:minutes].to_f * 60
@@ -65,6 +67,8 @@ class TasksController < ApplicationController
   end
 
   def destroy
+    @task.destroy
+    redirect_to users_path
   end
 
   private
@@ -74,6 +78,6 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:city, :description, :category, :vehicle, :minutes, :price_rate, :time)
+    params.require(:task).permit(:city, :description, :category, :vehicle, :tasker_id, :minutes, :price_rate, :time)
   end
 end

@@ -14,4 +14,11 @@
  *= require_self
  */
 
+<<<<<<< HEAD
  @import ‘bootstrap’;
+=======
+ // @import ‘bootstrap’;
+body :not(nav){
+  padding-left: 10px;
+}
+>>>>>>> 893df4ca625658ec7d0471f00574392a6712d686

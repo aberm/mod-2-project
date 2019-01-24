@@ -1,17 +1,25 @@
+<br>
 <ul>
+  <li><b>Task id: </b><%= @task.id %></li>
   <li><b>Boss: </b><%= link_to @task.boss.name, boss_path(@task.boss) %></li>
+  <% if @task.tasker_id %>
+  <li><b>Tasker: </b><%= link_to @task.tasker.name, tasker_path(@task.tasker) %></li>
+  <% end %>
   <li><b>Category: </b><%= @task.category %></li>
   <li><b>Description: </b><%= @task.description %></li>
   <li><b>Start Time: </b><%= @task.time_view %></li>
   <li><b>Location: </b><%= @task.city %></li>
   <li><b>Hours: </b><%= @task.minutes / 60.0 %></li>
   <li><b>Price Rate per hour: </b>$<%= @task.price_rate / 100.0 %></li>
-  <%= if @task.vehicle %>
+  <% if @task.vehicle %>
   <li><b>Vehicle needed: </b>Yes</li>
   <% else %>
   <li><b>Vehicle needed: </b>No</li>
   <% end %>
-  <li><b>Task id: </b><%= @task.id %></li>
+  <% if @task.rating && @task.review %>
+  <li><b>Review: </b><%= @task.review %></li>
+  <li><b>Rating: </b><%= @task.rating %> <%= '⭐️' * @task.rating%></li>
+  <% end %>
 
 </ul>
 
@@ -19,9 +27,9 @@
   <p><%= link_to "Edit Task", edit_task_path(@task) %></p>
 <% end %>
 
-<% if logged_in? && the_user.class.name == 'Tasker' %>
+<% if logged_in? && the_user.class.name == 'Tasker' && @task.tasker_id == nil %>
   <%= form_for @task do |f| %>
-
+  <%= f.hidden_field :tasker_id, value: the_user.id %>
   <%= f.submit "Choose Task" %>
   <% end %>
 <% end %>

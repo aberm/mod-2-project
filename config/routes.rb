@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+
+
+  root to: 'pages#home'
+  get '/home' => 'pages#home', as: 'home'
   get 'pages/about'
   get 'pages/contact'
   get 'pages/faqs'
   get 'signup' => 'pages#signup', as: 'signup'
-  
+
   resources :tasks
   resources :taskers
   resources :bosses
