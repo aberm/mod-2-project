@@ -9,7 +9,7 @@
 
 <% if logged_in? && the_user == @task.boss %>
   <%= render "form" %>
-  <%= form_tag tasker_path(@task), method: "delete", data: { confirm: "Are you sure you would like to delete this Profile?" } do %>
+  <%= form_tag task_path(@task), method: "delete", data: { confirm: "Are you sure you would like to delete this Task?" } do %>
     <%= submit_tag "Delete Task" %>
   <% end %>
 <% else %>

@@ -65,6 +65,8 @@ class TasksController < ApplicationController
   end
 
   def destroy
+    @task.destroy
+    redirect_to users_path
   end
 
   private
