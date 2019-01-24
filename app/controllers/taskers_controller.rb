@@ -68,6 +68,6 @@ end
   end
 
   def tasker_params
-    params.require(:tasker).permit(:name, :email, :username, :city, :bio, :vehicle, :password, :password_confirmation)
+    params.require(:tasker).permit(:name, :email, :username, :city, :bio, :vehicle, :password, :password_confirmation, :avatar)
   end
 end
