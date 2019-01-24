@@ -50,3 +50,5 @@ updating password, leaving it blank?
 if boss and tasker have the same username?
 
 add '/signup' route to pages
+
+remove search bar (for now), float-left profile and logout
