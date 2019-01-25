@@ -48,6 +48,7 @@ class TasksController < ApplicationController
 
   def update
     if the_user.class.name == "Tasker"
+      @task.update(task_params)
       @task.tasker_id = the_user.id
       @task.completed = true
       @task.save
@@ -78,6 +79,6 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:city, :description, :category, :vehicle, :tasker_id, :minutes, :price_rate, :time)
+    params.require(:task).permit(:city, :description, :category, :vehicle, :tasker_id, :minutes, :price_rate, :time, :rating, :review, :boss_rating)
   end
 end
