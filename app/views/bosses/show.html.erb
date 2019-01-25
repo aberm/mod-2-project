@@ -27,6 +27,8 @@
 <% @boss.tasks.select do |task| %>
 <% task.completed == false %>
 <% end.each do |task| %>
+<div class="avai">
+  <br>
 <ul>
   <li><b>Category: </b><%= task.category %></li>
   <li><b>Description: </b><%= task.description %></li>
@@ -36,16 +38,20 @@
   <li><b>Price Rate per hour: </b>$<%= task.price_rate / 100.0 %></li>
   <li><b>Task id: </b><%= task.id %></li>
   <%= link_to "View task", task_path(task) %>
-</ul><br>
+</ul>
+</div>
+<br>
 <% end %>
 
 
 <h4>Completed: </h4>
-
 <br>
+
 <% @boss.tasks.select do |task| %>
 <% task.completed == true %>
 <% end.each do |task| %>
+<div class="done">
+  <br>
 <ul>
   <li><b>Tasker: </b><%= link_to task.tasker.name, tasker_path(task.tasker) %></li>
   <li><b>Category: </b><%= task.category %></li>
@@ -57,6 +63,8 @@
   <li><b>Task id: </b><%= task.id %></li>
   <%= link_to "View task", task_path(task) %>
 </ul>
+</div>
+<br>
 <% end %>
 
 

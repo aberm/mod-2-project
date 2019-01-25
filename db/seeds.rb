@@ -28,7 +28,7 @@ categories = [ "Assembly", "Carpentry", "Cleaning", "Decoration", "Delivery",
 	  end
 	10.times do |index|
 	  Task.create!(city: Faker::Address.state,
-	                description: Faker::Lorem.paragraph(5),
+	                description: Faker::Lorem.paragraph(2),
 	                category: categories.sample,
 	                time: Faker::Time.forward(23, :morning),
 	                boss_id: Faker::Number.between(1, 10),
@@ -44,7 +44,7 @@ categories = [ "Assembly", "Carpentry", "Cleaning", "Decoration", "Delivery",
 	  end
     10.times do |index|
   	  Task.create!(city: Faker::Address.state,
-  	                description: Faker::Lorem.paragraph(5),
+  	                description: Faker::Lorem.paragraph(2),
   	                category: categories.sample,
   	                time: Faker::Time.forward(23, :morning),
   	                boss_id: Faker::Number.between(1, 10),

@@ -1,6 +1,8 @@
 <% @tasks.select do |task| %>
 <% task.completed == false %>
 <% end.each do |task| %>
+<div class="avai">
+  <br>
 <ul>
   <li><b>Boss: </b><%= link_to task.boss.name, boss_path(task.boss) %></li>
   <li><b>Category: </b><%= task.category %></li>
@@ -15,5 +17,7 @@
   <li><b>Hours: </b><%= task.minutes / 60.0 %></li>
   <li><b>Price Rate per hour: </b>$<%= task.price_rate / 100.0 %></li>
   <%= link_to "View task", task_path(task) %>
-</ul><br>
+</ul>
+</div>
+<br>
 <% end %>
