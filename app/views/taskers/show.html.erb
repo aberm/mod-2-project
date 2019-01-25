@@ -18,7 +18,10 @@
   <% end %>
   <li><b>Bio: </b><%= @tasker.bio %></li>
 </ul>
+<% if logged_in? && the_user == @tasker %>
 <p><%= link_to "Edit Profile", edit_tasker_path(@tasker) %>
+  <br>
+  <% end %>
   <br>
 
 <h4>Completed: </h4><br>
