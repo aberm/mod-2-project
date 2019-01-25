@@ -10,4 +10,17 @@ class Tasker < ApplicationRecord
 
   has_secure_password
 
+  def total_money
+    self.tasks.map {|task| (task.price_rate / 100 * task.minutes / 60)}.inject(:+)
+  end
+
+  def average_rating
+    ratings = self.tasks.map {|task| task.rating }.compact
+    unless ratings.empty?
+      (ratings.reduce(:+).to_f / ratings.size).round(2)
+    else
+      0
+    end
+  end
+
 end
