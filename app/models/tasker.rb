@@ -1,5 +1,6 @@
 class Tasker < ApplicationRecord
   has_many :tasks
+  has_one_attached :avatar
   has_many :bosses, through: :tasks
   validates :name, presence: true, length: { minimum: 4 }
   validates :email, confirmation: true, uniqueness: true
@@ -8,5 +9,5 @@ class Tasker < ApplicationRecord
   validates :vehicle, inclusion: { in: [ true, false ] }
 
   has_secure_password
-  
+
 end
