@@ -1,16 +1,21 @@
+<br>
 <h4>Completed Tasks: </h4>
 
 <br>
 <% @tasks.select do |task| %>
 <% task.completed == true %>
 <% end.each do |task| %>
+<div class="done">
+  <br>
 <ul>
   <li><b>Boss: </b><%= link_to task.boss.name, boss_path(task.boss) %></li>
   <li><b>Tasker: </b><%= link_to task.tasker.name, tasker_path(task.tasker) %></li>
   <li><b>Category: </b><%= task.category %></li>
   <li><b>Start Time: </b><%= task.time_view %></li>
   <%= link_to "View task", task_path(task) %>
-</ul><br>
+</ul>
+</div>
+<br>
 <% end %>
 
 <h5><%= link_to "Currently Listed Tasks", tasks_path %></h5>
