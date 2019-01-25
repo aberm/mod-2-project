@@ -23,7 +23,7 @@
 
 </ul>
 
-<% if logged_in? && the_user == @task.boss %>
+<% if logged_in? && the_user == @task.boss && !@task.completed %>
   <p><%= link_to "Edit Task", edit_task_path(@task) %></p>
 <% end %>
 
