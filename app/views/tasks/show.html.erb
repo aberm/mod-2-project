@@ -33,3 +33,21 @@
   <%= f.submit "Choose Task" %>
   <% end %>
 <% end %>
+
+<% if logged_in? && @task.completed && the_user == @task.boss && @task.rating == nil %>
+  <%= form_for @task do |f| %>
+  <%= f.label :rating, "Give #{@task.tasker.name} a rating" %>
+  <%= f.select :rating, [1,2,3,4,5] %><br>
+  <%= f.label :review, "Give #{@task.tasker.name} a review" %>
+  <%= f.text_field :review %>
+  <%= f.submit %>
+  <% end %>
+<% end %>
+
+<% if logged_in? && @task.completed && the_user == @task.tasker && @task.boss_rating == nil %>
+  <%= form_for @task do |f| %>
+  <%= f.label :boss_rating, "Give the boss a rating" %>
+  <%= f.select :boss_rating, [1,2,3,4,5] %><br>
+  <%= f.submit %>
+  <% end %>
+<% end %>
