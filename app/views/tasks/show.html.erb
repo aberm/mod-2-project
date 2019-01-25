@@ -28,9 +28,13 @@
 <% end %>
 
 <% if logged_in? && the_user.class.name == 'Tasker' && @task.tasker_id == nil %>
-  <%= form_for @task do |f| %>
-  <%= f.hidden_field :tasker_id, value: the_user.id %>
-  <%= f.submit "Choose Task" %>
+  <% if !the_user.vehicle && @task.vehicle %>
+    <p style="color:red;">You need a vehicle for this task.</p>
+  <% else %>
+    <%= form_for @task do |f| %>
+      <%= f.hidden_field :tasker_id, value: the_user.id %>
+      <%= f.submit "Choose Task" %>
+    <% end %>
   <% end %>
 <% end %>
 
