@@ -13,7 +13,12 @@
   <li><b>Email: </b><%= @boss.email %></li>
   <li><b>City: </b><%= @boss.city %></li>
   <li><b>Rating: </b><%= @boss.average_rating %> <%= '⭐️' * @boss.average_rating.floor%></li>
-</ul><br>
+</ul>
+<% if logged_in? && the_user == @boss %>
+<p><%= link_to "Edit Profile", edit_boss_path(@boss) %>
+  <br>
+  <% end %>
+  <br>
 
 <h3>Tasks</h3><br>
 
@@ -66,6 +71,3 @@
 </div>
 <br>
 <% end %>
-
-
-<p><%= link_to "Edit Profile", edit_boss_path(@boss) %>

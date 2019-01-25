@@ -26,7 +26,7 @@ categories = [ "Assembly", "Carpentry", "Cleaning", "Decoration", "Delivery",
                   password:'1234',
 	               )
 	  end
-	10.times do |index|
+	20.times do |index|
 	  Task.create!(city: Faker::Address.state,
 	                description: Faker::Lorem.paragraph(2),
 	                category: categories.sample,

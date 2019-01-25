@@ -1,9 +1,10 @@
+<br>
+<% if logged_in? && the_user.class.name == 'Boss' %>
+<p><%= link_to "New Task", new_task_path %></p>
+<% end %>
+
 <h4>Currently Listed: </h4>
 <br>
-
-<% if logged_in? && the_user.class.name == 'Boss' %>
-  <p><%= link_to "New Task", new_task_path %></p>
-<% end %>
 
 <%= render "uncompleted-details" %>
 

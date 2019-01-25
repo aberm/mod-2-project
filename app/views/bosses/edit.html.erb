@@ -7,9 +7,11 @@
   <% end %>
 <% end %>
 
-<%= render 'form' %>
-<br>
-
-<%= form_tag boss_path(@boss), method: "delete", data: { confirm: "Are you sure you would like to delete your Profile?" } do %>
-  <%= submit_tag "Delete Profile" %>
+<% if logged_in? && the_user == @boss %>
+  <%= render "form" %><br>
+  <%= form_tag boss_path(@boss), method: "delete", data: { confirm: "Are you sure you would like to delete this Task?" } do %>
+    <%= submit_tag "Delete Profile" %>
+  <% end %>
+<% else %>
+    <p style="color:red;">You do not have access to this page.</p>
 <% end %>

@@ -17,7 +17,17 @@
   <li><b>Vehicle: </b>No</li>
   <% end %>
   <li><b>Bio: </b><%= @tasker.bio %></li>
-</ul><br>
+  <% if logged_in? && the_user == @tasker %>
+  <li><b>Rating: </b><%= @tasker.average_rating.round(2) %> <%= '⭐️' * @tasker.average_rating.floor%></li>
+  <li><b>Tasks completed: </b><%= @tasker.tasks.count %></li>
+  <li><b>Total money made: </b>$<%= @tasker.total_money %></li>
+  <% end %>
+</ul>
+<% if logged_in? && the_user == @tasker %>
+<p><%= link_to "Edit Profile", edit_tasker_path(@tasker) %>
+  <br>
+  <% end %>
+  <br>
 
 <h4>Completed: </h4><br>
 
@@ -38,8 +48,6 @@
     <%= link_to "View task", task_path(task) %>
   </ul>
   </div>
+  <br>
   <% end %>
   <br>
-
-
-<p><%= link_to "Edit Profile", edit_tasker_path(@tasker) %>
