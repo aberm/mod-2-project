@@ -19,6 +19,7 @@
   <li><b>Bio: </b><%= @tasker.bio %></li>
   <% if logged_in? && the_user == @tasker %>
   <li><b>Rating: </b><%= @tasker.average_rating.round(2) %> <%= '⭐️' * @tasker.average_rating.floor%></li>
+  <li><b>Tasks completed: </b><%= @tasker.tasks.count %></li>
   <li><b>Total money made: </b>$<%= @tasker.total_money %></li>
   <% end %>
 </ul>
@@ -47,5 +48,6 @@
     <%= link_to "View task", task_path(task) %>
   </ul>
   </div>
+  <br>
   <% end %>
   <br>
