@@ -14,6 +14,7 @@ class SessionsController < ApplicationController
       redirect_to sessions_new_path
     else
       @user = Boss.find_by(username: params[:username]) || Tasker.find_by(username: params[:username])
+      return head(:forbidden) unless @user.respond_to? :authenticate
       return head(:forbidden) unless @user.authenticate(params[:password])
       session[:user] = @user
       redirect_to users_path #written url to show path?
