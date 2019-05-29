@@ -7,7 +7,7 @@ Login as a tasker or job-seeker
 Enhanced user experience with forms, ratings and reviews
 
 To run:
-
+--
 - clone repository and `cd` into it
 - run `bundle install`
 - run `rails s`
