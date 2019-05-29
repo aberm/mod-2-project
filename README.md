@@ -1,8 +1,10 @@
 # README
 
 Mod 2 Project created with Rails API + Rails ActionView
+
 Login as a tasker or job-seeker
-Enhanced User experience with forms, ratings and reviews
+
+Enhanced user experience with forms, ratings and reviews
 
 To run:
 
