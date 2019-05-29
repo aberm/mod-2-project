@@ -2,6 +2,9 @@ Boss.destroy_all
 Tasker.destroy_all
 Task.destroy_all
 
+Boss.create(name: "user-boss", email: "boss@email", username: "user-boss", city: "Brooklyn", password: "1234")
+Tasker.create(name: "user-tasker", email: "tasker@email", username: "user-tasker", city: "Brooklyn", bio: "tasker bio", vehicle: true, password: "1234")
+
 categories = [ "Assembly", "Carpentry", "Cleaning", "Decoration", "Delivery",
     "Electrical", "Errands", "Event-Planning", "Gardening", "Heavy Lifting",
     "Home Improvement", "Installation", "Moving", "Organization", "Painting",
